@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-grafite-950 text-grafite-100 antialiased min-h-screen selection:bg-ciano-500 selection:text-white;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-grafite-900/50 backdrop-blur-xl border border-grafite-800 shadow-premium;
+  }
+  
+  .btn-primary {
+    @apply bg-ciano-600 hover:bg-ciano-500 text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-glow-ciano flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-grafite-800 hover:bg-grafite-700 text-grafite-200 font-bold py-3 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2;
+  }
+
+  .input-field {
+    @apply w-full bg-grafite-900 border-2 border-grafite-800 rounded-2xl px-5 py-4 text-white focus:border-ciano-500 focus:ring-0 transition-all placeholder:text-grafite-600;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-grafite-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-grafite-800 rounded-full hover:bg-ciano-900 transition-colors;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-ciano-500/30 rounded-full hover:bg-ciano-500/50;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  @apply animate-fade-in;
+}
